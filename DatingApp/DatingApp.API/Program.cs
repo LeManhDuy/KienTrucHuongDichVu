@@ -12,6 +12,14 @@ var serverVersion = new MySqlServerVersion(new Version(8, 0, 29));
 // Add services to the container.
 
 services.AddControllers();
+
+services.AddCors(o =>
+    o.AddPolicy("CorsPolicy", builder =>
+        builder.WithOrigins("http://localhost:4200")
+            .AllowAnyHeader()
+            .AllowAnyMethod()));
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 services.AddEndpointsApiExplorer();
 services.AddSwaggerGen();
@@ -49,6 +57,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseAuthentication();
+
+app.UseCors("CorsPolicy");
 
 app.UseHttpsRedirection();
 

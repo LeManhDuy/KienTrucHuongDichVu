@@ -60,7 +60,7 @@ namespace DatingApp.API.Controllers
             var token = _tokenServices.CreateToken(currentUser.Username);
             return Ok(token);
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public IActionResult Get()
         {

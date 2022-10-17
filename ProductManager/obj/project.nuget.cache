@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vfDo/xgeRCnegjpNKBm59p4L/b14um9Oz7dlA0XrvunnvCE9gm9Z9azaAoTRociUT2MtwcM/GRnm/sLKw/XM+g==",
+  "dgSpecHash": "W7j0D0427LLvTRsepL4RnLrQOokqCU8//FCgpxBGnHcTMHB54qzAmP37FnoLCZZZ9k1dV35xRRzmZlIgpoiH2Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Duy\\Desktop\\Kien truc huong dich vu\\ProductManager\\ProductManager.csproj",
+  "projectFilePath": "C:\\Users\\Duy\\Desktop\\KienTrucHuongDichVu\\ProductManager\\ProductManager.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Duy\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Duy\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
