@@ -37,7 +37,11 @@ namespace DatingApp.API.Controllers
             _context.AppUsers.Add(newUser);
             _context.SaveChanges();
             var token = _tokenServices.CreateToken(newUser.Username);
-            return Ok(token);
+            return Ok(new UserTokenDto
+            {
+                Username = newUser.Username,
+                Token = token
+            });
         }
         [HttpPost("login")]
         public IActionResult Login([FromBody] AutherUserDto autherUserDto)
@@ -58,7 +62,11 @@ namespace DatingApp.API.Controllers
                 }
             }
             var token = _tokenServices.CreateToken(currentUser.Username);
-            return Ok(token);
+            return Ok(new UserTokenDto
+            {
+                Username = currentUser.Username,
+                Token = token
+            });
         }
         //[Authorize]
         [HttpGet]

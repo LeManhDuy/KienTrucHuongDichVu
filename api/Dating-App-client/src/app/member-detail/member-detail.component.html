@@ -1,0 +1,13 @@
+<div class="card border border-warning" style="width: 18rem; height: 35rem; margin-bottom: 40px;" *ngIf="member">
+    <img class="card-img-top" src="{{member.avatar}}" alt="{{member.knowAs}}" />
+    <div class="card-body">
+        <h5 class="card-title">{{member.knowAs}}</h5>
+        <h6 class="sub-title mb-2 text-muted">{{member.city}} - {{member.age}} - {{member.gender}}</h6>
+        <p class="card-text">
+            {{member.introduction}}
+        </p>
+        <a href="/members/{{member.username}}" class="btn btn-primary ">More info</a>
+
+        <a href="#" class="btn btn-success" style="margin-left: 40px;">Follow</a>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<app-navbar>
+
+</app-navbar>
+<h3 class="text-center">Hello, {{ (accountService.currentUser$ | async)?.username }}</h3>
+
+<app-members></app-members>

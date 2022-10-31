@@ -7,14 +7,30 @@
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    <div style="display: flex;">
+                        <a class="nav-link" href="#">username: {{authUser.username}}</a>
+                        <a class="nav-link" href="#">password: {{authUser.password}}</a>
+                    </div>
                 </li>
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Username" aria-label="Username" />
-                <input class="form-control me-2" type="password" placeholder="Password" aria-label="Password" />
-                <button class="btn btn-outline-success" type="submit">Login</button>
+            <form class="d-flex" *ngIf="!(accountService.currentUser$ | async)">
+                <input class="form-control me-2" type="text" placeholder="Username" aria-label="Username"
+                    name="username" [(ngModel)]="authUser.username" />
+                <input class="form-control me-2" type="password" placeholder="Password" aria-label="Password"
+                    name="password" [(ngModel)]="authUser.password" />
+                <button class="btn btn-outline-success" type="button" (click)="login()">Login</button>
             </form>
+            <ul class="d-flex navbar-nav" *ngIf="(accountService.currentUser$ | async)">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">
+                        Hi, {{(accountService.currentUser$ | async)?.username}}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button class="btn btn-outline-success" href="javscript:void(0)" type="button"
+                        (click)="accountService.logout()">Logout ne</button>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
