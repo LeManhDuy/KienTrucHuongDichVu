@@ -35,6 +35,10 @@ namespace DatingApp.API.Services
         public List<MemberDto> GetMembers(MemberFilterDto memberFilterDto)
         {
             return _context.AppUsers
+                .Where(member => member.Username.Contains(memberFilterDto.Keyword)
+                || member.Email.Contains(memberFilterDto.Keyword)
+                || member.KnowAs.Contains(memberFilterDto.Keyword)
+                || member.Introduction.Contains(memberFilterDto.Keyword))
                 .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)
                 .ToList();
             // var users = _context.AppUsers.ToList();

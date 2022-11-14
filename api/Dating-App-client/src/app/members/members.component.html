@@ -1,3 +1,13 @@
 <div class="row">
+    <form class="d-flex">
+        <input
+          class="form-control me-2"
+          type="text"
+          placeholder="Username"
+          name="username"
+          [(ngModel)]="memberFilter.keyword"
+        />
+        <button class="btn btn-outline-success" type="button" (click)="search()">Search</button>
+      </form>
     <app-member-detail class="col-3" *ngFor="let member of members" [member]="member"></app-member-detail>
 </div>

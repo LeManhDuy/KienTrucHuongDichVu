@@ -21,7 +21,7 @@ namespace Namespace
         }
 
         [HttpGet]
-        public ActionResult<List<MemberDto>> Get(MemberFilterDto memberFilterDto)
+        public ActionResult<List<MemberDto>> Get([FromQuery]  MemberFilterDto memberFilterDto)
         {
             return Ok(_memberService.GetMembers(memberFilterDto));
         }

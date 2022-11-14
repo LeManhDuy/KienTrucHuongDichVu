@@ -8,3 +8,6 @@ export class Member {
     city: string = ' ';
     avatar: string = ' ';
 }
+export class MemberFilter {
+    keyword?: string;
+}
