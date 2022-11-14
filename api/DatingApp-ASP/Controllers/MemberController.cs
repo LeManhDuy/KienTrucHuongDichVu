@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using DatingApp.API.Controllers;
 using DatingApp.API.DTOs;
 using DatingApp.API.Services;
+using DatingApp_ASP.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Namespace
@@ -20,9 +21,9 @@ namespace Namespace
         }
 
         [HttpGet]
-        public ActionResult<List<MemberDto>> Get()
+        public ActionResult<List<MemberDto>> Get(MemberFilterDto memberFilterDto)
         {
-            return Ok(_memberService.GetMembers());
+            return Ok(_memberService.GetMembers(memberFilterDto));
         }
 
         [HttpGet("{username}")]

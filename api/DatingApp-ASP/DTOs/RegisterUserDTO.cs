@@ -19,7 +19,7 @@ namespace DatingApp_ASP.DTOs
         [Required]
         [MaxLength(256)]
         public string Email { get; set; }
-        public int Age { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
         [Required]
         [MaxLength(32)]

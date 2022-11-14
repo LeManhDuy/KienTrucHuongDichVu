@@ -10,20 +10,25 @@ import { FormsModule } from '@angular/forms';
 import { MembersComponent } from './members/members.component';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { MemberDetailComponent } from './member-detail/member-detail.component';
+import { RegisterComponent } from './register/register.component';
+import { RouterModule } from '@angular/router';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     MembersComponent,
-    MemberDetailComponent
+    MemberDetailComponent,
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

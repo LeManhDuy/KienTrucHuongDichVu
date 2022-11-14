@@ -7,6 +7,7 @@ using AutoMapper.QueryableExtensions;
 using DatingApp.API.Data;
 using DatingApp.API.Data.Entities;
 using DatingApp.API.DTOs;
+using DatingApp_ASP.DTOs;
 
 namespace DatingApp.API.Services
 {
@@ -31,7 +32,7 @@ namespace DatingApp.API.Services
             return _mapper.Map<User, MemberDto>(user);
         }
 
-        public List<MemberDto> GetMembers()
+        public List<MemberDto> GetMembers(MemberFilterDto memberFilterDto)
         {
             return _context.AppUsers
                 .ProjectTo<MemberDto>(_mapper.ConfigurationProvider)

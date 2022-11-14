@@ -6,6 +6,6 @@ namespace DatingApp_ASP.Services
     public interface IAuthService
     {
         public string Login(AuthUserDto authUserDto);
-        public string Register(RegisterUserDto authUserDto);
+        public string Register(RegisterUserDto registerUserDto);
     }
 }
